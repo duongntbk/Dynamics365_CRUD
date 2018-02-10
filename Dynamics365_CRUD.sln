@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics365_CRUD", "Dynamics365_CRUD\Dynamics365_CRUD.csproj", "{6BD90A1B-AF09-4C7B-AD08-BC3C89C4DE1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BD90A1B-AF09-4C7B-AD08-BC3C89C4DE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD90A1B-AF09-4C7B-AD08-BC3C89C4DE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD90A1B-AF09-4C7B-AD08-BC3C89C4DE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD90A1B-AF09-4C7B-AD08-BC3C89C4DE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BAC7732-E694-4347-86FA-8634AAE1F1E7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+.vs
+.git
+packages
+Dynamics365_CRUD/bin
+Dynamics365_CRUD/obj
