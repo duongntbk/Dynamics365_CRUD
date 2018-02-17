@@ -8,6 +8,7 @@ namespace Dynamics365_CRUD
     public class Dynamics365_CRUD : IPlugin
     {
         private IOrganizationService service;
+        private ITracingService tracingService;
 
         public void Execute(IServiceProvider serviceProvider)
         {
@@ -15,18 +16,35 @@ namespace Dynamics365_CRUD
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
             service = serviceFactory.CreateOrganizationService(context.UserId);
+            tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+
+            // Check exection depth to prevent loop.
+            tracingService.Trace("Depth is:" + context.Depth);
+            if (context.Depth > 1)
+            {
+                // If depth > 1 (another plugin trigger this plugin) then stop processing.
+                return;
+            }
 
             // Demo for Delete operation.
+            tracingService.Trace("Before demoDelete function");
             demoDelete();
+            tracingService.Trace("After demoDelete function");
 
             // Demo for Update operation.
+            tracingService.Trace("Before demoUpdate function");
             demoUpdate();
+            tracingService.Trace("After demoUpdate function");
 
             // Demo for Retrieve operation.
+            tracingService.Trace("Before demoRetrieve function");
             var retrievedEntity = demoRetrieve();
+            tracingService.Trace("After demoRetrieve function");
 
             // Demo for Create operation.
+            tracingService.Trace("Before demoCreate function");
             demoCreate(retrievedEntity);
+            tracingService.Trace("After demoCreate function");
         }
 
         /// <summary>
